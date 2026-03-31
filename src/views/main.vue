@@ -1,0 +1,88 @@
+<script>
+</script>
+
+<template>
+  <div class="mainvisual">
+      <ul>
+        <li>
+          <img src="../assets/image/mainvisual_1.png" alt="메인 올리브1">
+          <div class="main_text">
+            <h2>오로지 <span>건강을 위해</span></h2>
+            <p>수십년에 걸쳐 고심하고 고심해서 연구하는 <br> 저희의 접근 방식을 알아보세요</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  <section class="maincontents">
+    <div class="banner">
+      <div class="reviews">
+        <span></span>
+        <p>8950+ TRUSTED REVIEWS</p>
+      </div>
+      <div class="quote">
+        <ul>
+          <li>"DO NOT LET THE ENEMY KNOW OF MY DEATH" <span>-ADMIRAL SUNSIN YI-</span></li>
+          <li>"EVERYTHING FEELS WELL-CONSIDERED" -SHOPHIA L.</li>
+        </ul>
+      </div>
+
+
+    </div>
+  </section>
+</template>
+
+<style>
+.mainvisual{
+  position: relative;
+  top:-60px;
+  z-index: -1;
+}
+.mainvisual img{
+  width:100%;
+}
+.main_text{
+  position:absolute;
+  bottom:130px;
+  left:35%;
+  color:White;
+  font-family: 'SUIT', sans-serif;
+}
+.main_text h2{
+  font-size: 80px;
+  letter-spacing: 0.5px;
+  padding-bottom: 50px;
+}
+.main_text h2 span{
+  font-weight: 500;
+}
+.main_text p {
+  font-size: 25px;
+  text-align: center;
+  letter-spacing: 0.8px;
+  line-height: 1.4;
+}
+
+.maincontents{
+  width:100%;
+  max-width:1200px;
+  margin: 0 auto;
+  position:relative;
+  top:-60px;
+}
+
+.maincontents .banner{
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid red;
+}
+
+.maincontents .banner .quote ul{
+  display: flex;
+}
+
+@media screen and (max-width: 1024px){
+  
+}
+@media screen and (max-width: 768px){}
+</style>
