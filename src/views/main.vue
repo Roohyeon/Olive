@@ -1,4 +1,24 @@
 <script>
+export default {
+  data() {
+    return{
+      currentIndex:0, //현재 index
+      quotes:[
+         { text: "DO NOT LET THE ENEMY KNOW OF MY DEATH", author: "ADMIRAL SUNSIN YI" },
+         { text: "EVERYTHING FEELS WELL-CONSIDERED", author: "SHOPHIA L." },
+         { text: "WHEN YOU HAVE FAULTS, DO NOT FEAR TO ABANDON THEM", author: "CONFUCIUS" }
+      ]
+    }
+  },
+  mounted() {
+    setInterval(() => {
+      this.currentIndex++
+      if(this.currentIndex >= this.quotes.length) {
+        this.currentIndex = 0
+      }
+    }, 2000)
+  }
+}
 </script>
 
 <template>
@@ -17,13 +37,14 @@
   <section class="maincontents">
     <div class="banner">
       <div class="reviews">
-        <span></span>
+        <ul>
+          <li v-for="n in 5" :key="n"><span class="material-icons">grade</span></li>
+        </ul>
         <p>8950+ TRUSTED REVIEWS</p>
       </div>
       <div class="quote">
-        <ul>
-          <li>"DO NOT LET THE ENEMY KNOW OF MY DEATH" <span>-ADMIRAL SUNSIN YI-</span></li>
-          <li>"EVERYTHING FEELS WELL-CONSIDERED" -SHOPHIA L.</li>
+        <ul >
+          <li v-for="(q,i) in quotes" :key="i" v-show="i === this.currentIndex">{{ q.text }}<span>-{{ q.author }}-</span></li>
         </ul>
       </div>
 
@@ -44,7 +65,7 @@
 .main_text{
   position:absolute;
   bottom:130px;
-  left:35%;
+  left:32%;
   color:White;
   font-family: 'SUIT', sans-serif;
 }
@@ -74,11 +95,47 @@
 .maincontents .banner{
   display: flex;
   justify-content: space-between;
+  padding:30px 0;
   border: 1px solid red;
 }
-
+.maincontents .banner .reviews {
+  display:flex;
+  align-items: center;
+  gap: 20px;
+}
+.maincontents .banner .reviews ul{
+  display:flex;
+}
+.maincontents .banner .reviews ul li span{
+  font-size:18px;
+}
+.maincontents .banner .reviews p{
+  font-size:14px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-thickness: 1.3px;
+}
+.maincontents .banner .quote{
+  display: flex;
+  align-items: center;
+  border:1px solid blue;
+  width:100%;
+  max-width:950px;
+}
 .maincontents .banner .quote ul{
   display: flex;
+  gap: 50px;
+  transition: 0.5s;
+}
+.maincontents .banner .quote ul li{
+  font-size: 14px;
+  font-weight: 500;
+  min-width: 100%;
+}
+.maincontents .banner .quote ul li span{
+  font-size: 14px;
+  font-weight: 500;
+  color:#adadad;
 }
 
 @media screen and (max-width: 1024px){

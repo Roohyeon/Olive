@@ -1,9 +1,9 @@
 <template>
   <section class="wrap">
     <Header />
-    <section id="container">
-      <router-view />
-    </section>
+    <router-view />
+    <!-- <section id="container">
+    </section> -->
     <Footer />
   </section>
 </template>
