@@ -1,5 +1,12 @@
 <script>
+import SwiperViusal from '@/views/SwiperVisual.vue';
+import SwiperBanner from './SwiperBanner.vue';
+
 export default {
+  components: {
+      SwiperViusal,
+      SwiperBanner
+    },
   data() {
     return{
       currentIndex:0, //현재 index
@@ -16,42 +23,8 @@ export default {
 
 <template>
   <div class="mainvisual">
-      <ul>
-        <li class="slide">
-          <picture>
-            <source srcset="../assets/image/mobile_mainvisual_1.png" media="(max-width: 768px)">
-            <img src="../assets/image/mainvisual_1.png" alt="메인 올리브1">
-          </picture>
-          <div class="main_text">
-            <h2>오로지 
-              <span>건강을 위해</span></h2>
-            <p>수십년에 걸쳐 고심하고 고심해서 연구하는 <br> 저희의 접근 방식을 알아보세요</p>
-          </div>
-        </li>
-        <li class="slide">
-          <picture>
-            <source srcset="../assets/image/mobile_mainvisual_2.png" media="(max-width: 768px)">
-            <img src="../assets/image/mainvisual_2.png" alt="메인 올리브2">
-          </picture>
-          <div class="main_text">
-            <h2>오로지 
-              <span>건강을 위해</span></h2>
-            <p>수십년에 걸쳐 고심하고 고심해서 연구하는 <br> 저희의 접근 방식을 알아보세요</p>
-          </div>
-        </li>
-        <li class="slide">
-          <picture>
-            <source srcset="../assets/image/mobile_mainvisual_3.png" media="(max-width: 768px)">
-            <img src="../assets/image/mainvisual_3.png" alt="메인 올리브2">
-          </picture>
-          <div class="main_text">
-            <h2>오로지 
-              <span>건강을 위해</span></h2>
-            <p>수십년에 걸쳐 고심하고 고심해서 연구하는 <br> 저희의 접근 방식을 알아보세요</p>
-          </div>
-        </li>
-      </ul>
-    </div>
+    <SwiperViusal />
+  </div>
 
   <section class="maincontents">
     <div class="banner">
@@ -69,49 +42,21 @@ export default {
       </div>
     </div>
 
-    <div class="slider">
-      <div class="slide_text">
-        <h2>A daily system, precisely applied</h2>
-        <p>
-          저속 노화를 형성하게 하는 몸의 기본적인 생명 활동을 건강하게 돕고<br>
-          오래도록 이어지는 간강의 기초를 채워주는 올리브를 연구합니다.
-        </p>
-      </div>
-
-      <div class="slide_btn">
-        <div class="next">
-          <p>NEXT</p>
-          <span class="material-icons">navigate_next</span>
-        </div>
-        <div class="before">
-          <p>PREV</p>
-          <span class="material-icons">navigate_before</span>
-        </div>
-      </div>
-
-      <div class="slide_bannner">
-        <ul>
-          <li v-for="img in slidebanners" :key="img" :src="`@/assets/image/${name}`" alt="배너 이미지"></li>
-        </ul>
-      </div>
-    </div>
+    <SwiperBanner/>
   </section>
 </template>
 
 <style>
 /* 비주얼 */
-.mainvisual{
-  position: relative;
-  top:-60px;
-  z-index: -1;
-}
 .mainvisual img{
   width:100%;
 }
 .main_text{
   position:absolute;
   bottom:130px;
-  left:32%;
+  left:50%;
+  transform: translateX(-50%);
+  text-align: center;
   color:White;
   font-family: 'SUIT', sans-serif;
 }
@@ -119,7 +64,6 @@ export default {
   font-size: 80px;
   letter-spacing: 0.5px;
   padding-bottom: 50px;
-  white-space: nowrap;
 }
 .main_text h2 span{
   font-weight: 500;
@@ -137,8 +81,6 @@ export default {
   width:100%;
   max-width:1200px;
   margin: 0 auto;
-  position:relative;
-  top:-60px;
 }
 
 .maincontents .banner{
@@ -201,10 +143,6 @@ export default {
 
 @media screen and (max-width: 1024px){
   .container{max-width: 980px;}
-  .main_text{
-    bottom: 50px;
-    left:29%;
-  }
 
   .main_text h2{
     font-size:60px;
@@ -219,12 +157,11 @@ export default {
 }
 @media screen and (max-width: 768px){
   .container{max-width:357px;}
+  
+  .main_text{bottom:50px;}
 
-  .main_text{
-    left:9%;
-  }
   .main_text h2{
-    font-size: 50px;
+    font-size: clamp(45px, 10vw, 60px);
     text-align: center;
     font-weight: 400;
     letter-spacing: 2px;
@@ -232,7 +169,10 @@ export default {
     padding-bottom: 25px;
     white-space: pre-wrap;
   }
-  .main_text p{font-size: 16px;}
+  .main_text p{
+    font-size: 16px;
+    white-space: nowrap;
+  }
 
   .maincontents .banner{display: none;}
 }

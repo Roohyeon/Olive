@@ -107,6 +107,13 @@
 </template>
 
 <style scoped>
+header{
+  position:fixed;
+  top: 0;
+  width:100%;
+  z-index:100;
+}
+
 button{
   border:none;
   background:none;
@@ -144,9 +151,10 @@ button{
   padding:10px 20px;
   border:none;
   background:none;
-  font-size:14px;
+  font-size:16px;
   cursor: pointer;
   color:#fff;
+  letter-spacing: 1.5px;
 }
 .topmenu .contentbox .logo button{
   padding: 5px 70px;
