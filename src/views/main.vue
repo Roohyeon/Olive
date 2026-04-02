@@ -17,11 +17,36 @@ export default {
 <template>
   <div class="mainvisual">
       <ul>
-        <li>
-          <img src="../assets/image/mainvisual_1.png" alt="메인 올리브1">
-          <source srcset="../assets/image/mobile_mainvisual_1.png" media="(max-width: 768px)">
+        <li class="slide">
+          <picture>
+            <source srcset="../assets/image/mobile_mainvisual_1.png" media="(max-width: 768px)">
+            <img src="../assets/image/mainvisual_1.png" alt="메인 올리브1">
+          </picture>
           <div class="main_text">
-            <h2>오로지 <span>건강을 위해</span></h2>
+            <h2>오로지 
+              <span>건강을 위해</span></h2>
+            <p>수십년에 걸쳐 고심하고 고심해서 연구하는 <br> 저희의 접근 방식을 알아보세요</p>
+          </div>
+        </li>
+        <li class="slide">
+          <picture>
+            <source srcset="../assets/image/mobile_mainvisual_2.png" media="(max-width: 768px)">
+            <img src="../assets/image/mainvisual_2.png" alt="메인 올리브2">
+          </picture>
+          <div class="main_text">
+            <h2>오로지 
+              <span>건강을 위해</span></h2>
+            <p>수십년에 걸쳐 고심하고 고심해서 연구하는 <br> 저희의 접근 방식을 알아보세요</p>
+          </div>
+        </li>
+        <li class="slide">
+          <picture>
+            <source srcset="../assets/image/mobile_mainvisual_3.png" media="(max-width: 768px)">
+            <img src="../assets/image/mainvisual_3.png" alt="메인 올리브2">
+          </picture>
+          <div class="main_text">
+            <h2>오로지 
+              <span>건강을 위해</span></h2>
             <p>수십년에 걸쳐 고심하고 고심해서 연구하는 <br> 저희의 접근 방식을 알아보세요</p>
           </div>
         </li>
@@ -74,6 +99,7 @@ export default {
 </template>
 
 <style>
+/* 비주얼 */
 .mainvisual{
   position: relative;
   top:-60px;
@@ -93,6 +119,7 @@ export default {
   font-size: 80px;
   letter-spacing: 0.5px;
   padding-bottom: 50px;
+  white-space: nowrap;
 }
 .main_text h2 span{
   font-weight: 500;
@@ -103,6 +130,8 @@ export default {
   letter-spacing: 0.8px;
   line-height: 1.4;
 }
+
+/* 비주얼 끝*/
 
 .maincontents{
   width:100%;
@@ -189,5 +218,22 @@ export default {
   }
 }
 @media screen and (max-width: 768px){
+  .container{max-width:357px;}
+
+  .main_text{
+    left:9%;
+  }
+  .main_text h2{
+    font-size: 50px;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    padding-bottom: 25px;
+    white-space: pre-wrap;
+  }
+  .main_text p{font-size: 16px;}
+
+  .maincontents .banner{display: none;}
 }
 </style>

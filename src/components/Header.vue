@@ -113,7 +113,7 @@ button{
 }
 
 .container{
-  width:100%;
+  width:99.5%;
   max-width:1200px;
   margin: 0 auto;
   padding: 0 20px;
