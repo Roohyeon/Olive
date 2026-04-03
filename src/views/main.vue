@@ -43,6 +43,17 @@ export default {
     </div>
 
     <SwiperBanner/>
+
+    <div class="textbanner-wrapper">
+      <p>FEELS CONSIDERED. BUILT TO LAST</p>
+      <div class="textbanner">
+        <h2>
+          A system-level <span class="textban-circle c1"></span> approach to <br class="mo-br">
+          supplementation - designed <span class="textban-circle c2"></span> for <br class="mo-br">
+          consistency <span class="textban-circle c3"></span>, not intensity.
+        </h2>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -126,6 +137,34 @@ export default {
   white-space: nowrap;
 }
 
+.textbanner-wrapper{
+  width:100%;
+  max-width: 1200px;
+  text-align: center;
+  margin: 100px auto 50px;
+}
+.textbanner-wrapper p {
+  font-weight: 600;
+  padding-bottom: 30px;
+}
+.textbanner h2{
+  font-size: 60px;
+  letter-spacing: 1.5px;
+  line-height: 1.2;
+}
+
+.textbanner .textban-circle{
+  display: inline-block;
+  vertical-align: middle;
+  width:80px;
+  height:80px;
+  border-radius: 100%;
+}
+
+.c1{background: url("../assets/image/textcircle_1.png") no-repeat center;}
+.c2{background: url("../assets/image/textcircle_2.png") no-repeat center;}
+.c3{background: url("../assets/image/textcircle_3.png") no-repeat center;}
+
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -175,5 +214,21 @@ export default {
   }
 
   .maincontents .banner{display: none;}
+
+  .textbanner-wrapper{margin:50px auto;}
+
+  .textbanner-wrapper p{font-size: 12px;}
+  .textbanner h2{
+    font-size:35px;
+    font-weight: 500;
+  }
+  
+  .textbanner .textban-circle{
+    width:40px;
+    height:40px;
+  }
+
+  .c1{background-position: bottom;}
+  .c2{background-position: top;}
 }
 </style>
